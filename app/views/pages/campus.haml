@@ -1,0 +1,7 @@
+%div.row{ id: 'campus' }
+  %div{ class: 'col-xl-8 offset-xl-2 center' }
+    %h1= @campus
+    %h2 Menus
+    - MenuTypes.non_custom.each do |type|
+      %a{ href: menu_route_builder(@campus, type, nil, nil, { nil: nil }) }
+        %button.btn.btn-primary{ onclick: "showLoading();" }= type.capitalize

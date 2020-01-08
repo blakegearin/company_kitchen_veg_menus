@@ -1,0 +1,98 @@
+%div{ class: 'row' }
+  %div{ class: 'col-xl-8 offset-xl-2' }
+    %h1 How It Works
+    %h2{ id: 'allergies' } Allergies
+    %p These are treated the same as exclude words.
+    %br
+    %h2{ id: 'include' } Words to Include
+    %p Menu items that <u>do not</u> contain these words are removed.
+    %h3{ id: 'include-example' } Example
+    %p If you add "tofu" as an include word and have no exclude words or allergies, then you'll get all |
+      the menu items that contain tofu. |
+    %br
+    %h2{ id: 'exclude' } Words to Exclude
+    %p
+      Menu items containing these words in their title or description are removed unless an exceptions is met.
+      = " Since exceptions are simple heuristics, please be aware of the "
+      %a.underline{ href: '/about#disclaimer' }> Disclaimer
+      \.
+    %h3{ id: 'exceptions' } Exceptions
+    %h4{ id: 'exceptions-all' } All Menus
+    %ol
+      %li The word "free" is found <b>directly</b> before or after an exclude word
+      %li The word "choice" is found <b>4 words</b> before an exclude word
+    %h4{ id: 'exceptions-filtered' } Pescatarian, Vegetarian, or Vegan Menus
+    %ol{ start: 3 }
+      %li The words "or" and "tofu" are found
+      %li The name of the menu type (or a more restrictive menu) is included
+    %br
+    %h3{ id: 'exclude-examples' } Examples
+    %p
+      %b Key:&nbsp
+      %i{ class: 'fas fa-check-circle' }
+      %span = on the menu&nbsp&nbsp|&nbsp
+      %i{ class: 'fa fa-times-circle' }
+      %span = not on the menu
+    %h4 Exception 1
+    %p If you build a Custom menu with "chicken" as an exclude word and have no include words or allergies.
+    %ul{ style: 'list-style-type: none;' }
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "chicken free"
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "free chicken"
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "free and chicken"
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "chicken and free"
+    %h4 Exception 2
+    %p If you build a Custom menu with "chicken" as an exclude word and have no include words or allergies.
+    %ul{ style: 'list-style-type: none;' }
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "choice of chicken"
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "chicken and your choice"
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "choice one two three ham"
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "choice one two three four ham"
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "ham one two three four choice"
+    %h4 Exception 3
+    %p If you're building a Vegetarian menu with no allergies or customizations.
+    %ul{ style: 'list-style-type: none;' }
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "beef or tofu"
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "apples or carrots and tofu"
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "chicken and tofu"
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "beef or chicken"
+    %h4 Exception 4
+    %p If you're building a Vegetarian menu with no allergies or customizations.
+    %ul{ style: 'list-style-type: none;' }
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "vegetarian burger"
+      %li
+        %i{ class: 'fas fa-check-circle' }
+        %span &nbsp "vegan burger"
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "pescatarian burger" (it's not a more restrictive menu)
+      %li
+        %i{ class: 'fas fa-times-circle' }
+        %span &nbsp "all-beef burger"

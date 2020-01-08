@@ -1,0 +1,92 @@
+@import 'themes/dark';
+@import 'themes/light';
+
+#navbar
+{
+  li
+  {
+    padding: 0 5px 0 5px;
+  }
+
+  li.active
+  {
+    background-color: var(--navbar-active-color);
+    color: #73aa72;
+  }
+}
+
+#navbar,
+#menu-type-dropdown
+{
+  background-color: var(--navbar-color);
+}
+
+#navbar .dropdown-item:focus,
+#navbar .dropdown-item:hover,
+#navbar li.nav-item:hover:not(.active)
+{
+  background-color: var(--navbar-hover-color);
+}
+
+@media only screen and (min-width: 1200px) {
+  #navbar
+  {
+    margin-bottom: 40px;
+  }
+}
+
+#navbar-title
+{
+  height: 48px;
+  padding: 10px 0px 10px 0px !important;
+}
+
+.navbar-toggler
+{
+  padding: .15rem .5rem;
+}
+.mt-2,
+.my-2
+{
+  margin-top: 0 !important;
+}
+
+#navbarDropdown
+{
+  line-height: 2.25 !important;
+}
+
+#invert-colors
+{
+  padding: 0;
+}
+
+#color-theme
+{
+  line-height: 2.2;
+}
+
+#switch-colors
+{
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1rem;
+  border-color: rgba(0,0,0,0);
+  font-weight: 400;
+  padding: .25rem .1rem;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link
+{
+  color: rgba(0,0,0,1);
+}
+
+.custom-toggler {
+  background-color: #306e24 !important;
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, .8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}

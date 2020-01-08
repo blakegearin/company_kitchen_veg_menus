@@ -1,0 +1,49 @@
+%div{ id: 'about', class: 'row' }
+  %div{ class: 'col-xl-8 offset-xl-2' }
+    %h1 About
+    %div{ class: 'row' }
+      %div{ class: 'col-xl-9' }
+        %p
+          ="Hey, my name's Blake and I'm a software engineer at "
+          %a.underline{ href: 'https://www.cerner.com/' }> Cerner
+          \.
+        %p I started eating less meat around 2015 mostly to improve my health. |
+        Over time I've grown to become passionate about the environmental impact of |
+        plant-based diets and alternative protein sources. Learn more about these topics here: |
+        %ul
+          %li
+            %a.underline{ href: 'https://youtu.be/nUnJQWO4YJY', target: '_blank' }
+              The diet that helps fight climate change
+          %li
+            %a.underline{ href: 'https://youtu.be/-k-V3ESHcfA', target: '_blank' }
+              Feeding Bill Gates a burger (to save the world)
+          %li
+            %a.underline{ href: 'https://youtu.be/GjSIvCTe8Qo', target: '_blank' }
+              Why You Should Eat Bugs
+        %p I created this web application to save a little bit of time every day and to reduce the friction |
+          for other people trying to eat healthier. |
+      %div{ class: 'col-xl-3 center' }
+        %br
+        %img{ id: 'blake-icon', src: '/public/images/blake_2019_transparent.png' }
+    %h2{ id: 'features' } Features
+    %ul
+      %li Menu Builder remembers the last option you selected
+      %li Menus that are built get cached for quicker load times
+    %br
+    %h2{ id: 'disclaimer' } Disclaimer
+    %p
+      ="The menu information displayed on this website is retrieved from and wholly attributable to "
+      %a.underline{ href: 'https://companykitchen.com/' }> Company Kitchen
+      \. I do not provide any warranty, express or implied, about the completeness, reliability, or accuracy of the
+      menu or items therein, especially regarding the ingredients & preparation of the food.
+    %p
+      Any action you take upon the information on this website is strictly at your own discretion and risk.
+      I will not be liable for any losses and damages in the connection with the use of this website.
+      When in doubt, ask the cooking staff at your location for more information about what it's their food
+      and how it's prepared.
+    %br
+    %h2{ id: 'faq' } FAQ
+    %ol
+      %li
+        %h5 Can you add _______ as a menu type?
+        %p I'd rather not. As the title implies, I'm only really interested in supporting plant-based menus

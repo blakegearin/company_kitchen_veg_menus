@@ -1,0 +1,28 @@
+%nav{ id: 'navbar', class: 'navbar navbar-expand-lg navbar-light sticky-top py-0' }
+  %a{ id: 'navbar-title', class: 'navbar-brand', href: '/' }
+    %img{ src: '/public/images/ck_green_logo.png', width: '30', height: '30', class: 'd-inline-block align-top',
+      alt: 'logo' }
+    CK Veg Menus
+  %button{ class: 'navbar-toggler custom-toggler', type: 'button', 'data-toggle': 'collapse', onfocus: 'this.blur();',
+    'data-target': '#navbarSupportedContent', 'aria-controls': 'navbarSupportedContent', 'aria-expanded': 'false',
+    'aria-label': 'Toggle navigation' }
+    %span{ class: 'navbar-toggler-icon' }
+  %div{ class: 'collapse navbar-collapse', id: 'navbarSupportedContent' }
+    %ul{ class: 'navbar-nav mr-auto' }
+      %li{ class: 'nav-item py-md-1' }
+        %a{ class: 'nav-link', href: '/menu_builder' } Menu Builder
+      %li{ class: 'nav-item py-md-1' }
+        %a{ class: 'nav-link', href: '/how-it-works' } How It Works
+      %li{ class: 'nav-item py-md-1 dropdown' }
+        %a{ class: 'nav-link dropdown-toggle', href: '#', id: 'navbar-dropdown', role: 'button',
+          'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' } Menu Types
+        %div{ id: 'menu-type-dropdown', class: 'dropdown-menu', 'aria-labelledby': 'navbar-dropdown' }
+          - MenuTypes.all.each do |menu_type|
+            %a{ class: 'dropdown-item', href: "/type/#{menu_type}" }= menu_type.capitalize
+      %li{ class: 'nav-item py-md-1' }
+        %a{ class: 'nav-link', href: '/about' } About
+    %form{ class: 'form-inline my-2 my-lg-0' }
+      %button{ id: 'invert-colors', type: 'button', class: 'btn', onfocus: 'this.blur();',
+        onclick: 'toggleColorTheme(); this.blur();' }
+        %i{ id: 'color-theme', class: 'fas fa-moon fa-lg', alt: 'dark and light theme toggle icon' }
+        %span{ id: 'switch-colors', class: 'navbar-toggler', 'aria-expanded': 'false' } Switch Colors

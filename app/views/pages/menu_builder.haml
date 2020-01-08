@@ -1,0 +1,82 @@
+%h1{ id: 'title' } Menu Builder
+%div{ class: 'row' }
+  %div{ id: 'menu-builder', class: 'col-xl-6 offset-xl-3' }
+    %form{ class: 'needs-validation', novalidate: true }
+      %fieldset{ class: 'form-group' }
+        %div{ class: 'row campus' }
+          %label{ class: 'col-xl-5 col-form-label' } Campus
+          %select{ id: 'campus', class: 'col-xl-5 selectpicker', required: true, 'data-style': 'btn-info',
+            'data-live-search': 'true',
+            onchange: "setPreference(this.id, this.options[this.selectedIndex].text); removeFeedback('campus');" }
+            - Campus.all.sort.each do |campus|
+              %option= campus
+          %div{ class: 'invalid-feedback center' } Please provide a campus.
+      %fieldset{ class: 'form-group' }
+        %div{ class: 'row type' }
+          %label{ class: 'col-xl-5 col-form-label' } Type
+          %select{ id: 'type',
+            class: 'col-xl-5 selectpicker',
+            required: true, 'data-style': 'btn-info',
+            'data-live-search': 'true',
+            onchange: "checkForCustom(); setPreference(this.id, this.options[this.selectedIndex].text); " |
+            "removeFeedback('type');" } |
+            - MenuTypes.all.map(&:capitalize).each do |type|
+              %option= type
+          %div{ class: 'invalid-feedback center' } Please provide a type.
+      %div{ id: 'allergies', class: 'row' }
+        %label{ class: 'col-xl-5 col-form-label custom' } Allergies
+        %div{ class: 'col-xl-5' }
+          - Allergy.all.each do |allergy|
+            %button{ id: "#{allergy.gsub(' ', '-')}", class: 'btn btn-outline-danger allergy rounded', type: 'button',
+              onclick: "toggleAllergy(this); this.blur();" }= allergy
+      %div.center
+        %button{ id: 'more-options', type: 'button', onfocus: 'this.blur();', onclick: "toggleCustom(); this.blur();" }
+          %span More Options
+          %br
+          %i{ class: 'fas fa-angle-down' }
+      %div{ id: 'custom', style: 'display: none;' }
+        %div{ id: 'price', class: 'row custom price' }
+          %label{ class: 'col-xl-5 col-form-label custom' } Price
+          %div{ class: 'col-xl-5' }
+            %div{ class: 'input-group mb-3' }
+              %select{ id: 'price-select', class: 'btn btn-outline-primary dropdown-toggle input-group-addon',
+                'data-style': 'btn-info',
+                onchange: "this.blur();" }
+                %option <
+                %option >
+                %option ≤
+                %option ≥
+                %option =
+              %input{ id: 'price-input', type: 'text', class: 'form-control', placeholder: '0.00', 'aria-label': '0.00',
+                'aria-describedby': 'basic-addon2', oninput: "removeFeedback('price');" }
+              %div{ class: 'input-group-append' }
+                %button{ id: 'price-button', class: 'btn btn-primary', type: 'button',
+                  onclick: 'addPrice();' } Add
+              %div{ class: 'invalid-feedback center' } Please enter a valid number.
+        %div{ class: 'row' }
+          %div{ id: 'price-entered', class: 'offset-xl-5 col-xl-5' }
+        %div{ id: 'include', class: 'row custom' }
+          %label{ class: 'col-xl-5 col-form-label custom' } Words to Include
+          %div{ class: 'col-xl-5' }
+            %div{ class: 'input-group mb-3' }
+              %input{ id: 'include-input', type: 'text', class: 'form-control', placeholder: '', 'aria-label': '',
+                'aria-describedby': 'basic-addon2' }
+              %div{ class: 'input-group-append' }
+                %button{ id: 'include-button', class: 'btn btn-primary', type: 'button',
+                  onclick: 'addWord("include");' } Add
+        %div{ class: 'row' }
+          %div{ id: 'include-entered', class: 'offset-xl-5 col-xl-5' }
+        %div{ id: 'exclude', class: 'row custom' }
+          %label{ class: 'col-xl-5 col-form-label custom' } Words to Exclude
+          %div{ class: 'col-xl-5' }
+            %div{ class: 'input-group mb-3' }
+              %input{ id: 'exclude-input', type: 'text', class: 'form-control', placeholder: '', 'aria-label': '',
+                'aria-describedby': 'basic-addon2' }
+              %div{ class: 'input-group-append' }
+                %button{ id: 'exclude-button', class: 'btn btn-primary', type: 'button',
+                  onclick: 'addWord("exclude");' } Add
+        %div{ class: 'row custom' }
+          %div{ id: 'exclude-entered', class: 'offset-xl-5 col-xl-5' }
+      %div{ class: 'col-xl-12 center' }
+        %button{ id: 'build', class: 'btn btn-success btn-lg rounded', type: 'button',
+          onclick: "buildMenu(); showLoading();" } Build

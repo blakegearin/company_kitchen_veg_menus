@@ -1,0 +1,25 @@
+.card.mb-0
+{
+  font-size: 22px;
+
+  p,
+  li
+  {
+    font-size: 16px;
+  }
+}
+
+.card
+{
+  background-color: var(--menu-type-accordion-background-color);
+}
+
+.accordion .card-header:after {
+  font-family: 'FontAwesome';
+  content: "\f068";
+  float: right;
+}
+.accordion .card-header.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\f067";
+}

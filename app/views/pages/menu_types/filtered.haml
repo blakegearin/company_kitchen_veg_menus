@@ -1,0 +1,21 @@
+%div{ class: 'row' }
+  %div{ class: 'col-xl-8 offset-xl-2' }
+    %h1= "#{@menu_type} Menu"
+    %p This menu excludes these food categories:
+    %div.accordion{ id: 'accordion' }
+      %div{ class: 'card mb-0' }
+        - MenuTypes.send(@menu_type.downcase)['food_categories'].each_with_index do |food_category, index|
+          %div{ class: 'card-header collapsed', 'data-toggle': 'collapse', href: "#collapse#{index}" }
+            %a{ class: 'card-title'}= food_category.gsub('_', ' ').titlecase
+          %div{ id: "collapse#{index}", class: 'card-body collapse', 'data-parent': '#accordion'}
+            %p Excludes menu items that contain the following words:
+            %ul{ id: 'type-list' }
+              - FoodCategory.send(food_category.downcase).sort.each do |word|
+                %li= word
+    %br
+    %h5 Related Links:
+    %ul
+      %li
+        %a.underline{ href: '/how-it-works#exceptions' } Exceptions
+      %li
+        %a.underline{ href: '/about#disclaimer' } Disclaimer

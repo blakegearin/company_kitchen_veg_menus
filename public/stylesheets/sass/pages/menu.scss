@@ -1,0 +1,71 @@
+@import 'themes/dark';
+@import 'themes/light';
+
+body
+{
+  margin-top: 0 !important;
+}
+body nav
+{
+  font-size: 1rem !important;
+}
+
+.navbar
+{
+  border-radius: 0px !important;
+}
+
+.navbar-brand
+{
+  display: inline-block !important;
+  margin-right: 1rem !important;
+  font-size: 1.25rem !important;
+  line-height: inherit !important;
+  white-space: nowrap !important;
+}
+.button,
+a.button,
+button,
+button.close
+{
+  min-width: 0px !important;
+  margin: 0px !important;
+  min-height: 48px !important;
+  height: 48px !important;
+}
+.btn:hover
+{
+  color: none !important;
+  text-decoration: none;
+}
+@media (min-width: 769px)
+{
+  .button:hover,
+  a.button:hover,
+  button.close:hover,
+  button:hover
+  {
+    background-color: transparent !important;
+  }
+}
+body.mat-app-background {
+  background-color: var(--main-background-color) !important;
+  color: var(--main-text-color) !important;
+}
+nav,
+footer
+{
+  font-family: 'Varela Round', sans-serif !important;
+}
+.dietcon.calories
+{
+  background-color: transparent !important;
+}
+footer
+{
+  font-size: 1rem !important;
+}
+footer a:hover
+{
+  text-decoration: underline !important;
+}

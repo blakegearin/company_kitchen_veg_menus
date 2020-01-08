@@ -1,0 +1,10 @@
+%div.row
+  %div{ class: 'col-xl-8 offset-xl-2 center' }
+    %a{ href: 'https://icons8.com/' }
+      %img{ id: 'not-found', src: '/public/images/broken_robot_transparent.png' }
+    %h1= "Invalid #{@param_key.capitalize} Parameter"
+    %p= "Sorry, but you're missing a \"#{@param_key}\" parameter in your URL."
+    %p
+      %button{ onclick: "window.location.href = '/';", class: 'btn btn-primary rounded' }
+        %i{class: 'fas fa-arrow-left' }
+        &nbspBack to Home

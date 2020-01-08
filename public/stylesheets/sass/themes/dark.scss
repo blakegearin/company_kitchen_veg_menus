@@ -1,0 +1,54 @@
+[data-theme="dark"]
+{
+  --main-background-color: #212529;
+  --main-text-color: #C6C6C6;
+
+  --main-a-underline-color: #ffffff;
+
+  --main-input-background-color: black;
+  --main-input-border-color: #525252;
+
+  --main-btn-primary-color: #365a7f;
+  --main-btn-primary-background-color: #2b4764;
+  --main-btn-primary-border-color: #28415b;
+  --main-btn-primary-active-border-color: #243a53;
+  --main-btn-primary-focus-shadow-color: rgba(85, 115, 146, 0.5);
+
+  --main-btn-danger-color: #a35048;
+
+  --main-btn-success-color: #387c47;
+  --main-btn-success-hover-background-color: #346b40;
+  --main-btn-success-hover-border-color: #376441;
+
+  --navbar-color: #669966;
+  --navbar-active-color: #558455;
+  --navbar-hover-color: #7dad7c;
+
+  --loading-background-color: rgba(0,0,0,0.7);
+  --loading-spinner-color: white;
+
+  --footer-color: #111111;
+
+  --menu-type-accordion-background-color: #1b1b1b;
+
+  .invert-logo
+  {
+      filter: invert(1);
+  }
+
+  select:not([multiple])
+  {
+    filter: invert(1);
+    color: #000000 !important;
+    border-color: #C9A580 !important;
+  }
+
+  select.btn-outline-primary:hover
+  {
+    background-color: #C9A580 !important;
+  }
+
+  select.btn-outline-primary.focus, .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(170, 139, 109, 0.5) !important;
+  }
+}

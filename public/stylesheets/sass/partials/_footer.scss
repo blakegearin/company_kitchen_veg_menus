@@ -1,0 +1,21 @@
+@import 'themes/dark';
+@import 'themes/light';
+
+footer div {
+  left: 0 !important;
+  bottom: 0 !important ;
+  width: 100% !important ;
+  clear: both !important ;
+  height: 40px !important ;
+  margin-top: -151px !important ;
+  text-rendering: auto !important ;
+  position: fixed !important ;
+  background-repeat: no-repeat !important ;
+  background-attachment: fixed !important ;
+  background-color: var(--footer-color) !important ;
+
+  small
+  {
+    line-height: 3.25 !important ;
+  }
+}
