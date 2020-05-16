@@ -10,9 +10,7 @@
   %div{ class: 'collapse navbar-collapse', id: 'navbarSupportedContent' }
     %ul{ class: 'navbar-nav mr-auto' }
       %li{ class: 'nav-item py-md-1' }
-        %a{ class: 'nav-link', href: '/menu_builder' } Menu Builder
-      %li{ class: 'nav-item py-md-1' }
-        %a{ class: 'nav-link', href: '/how-it-works' } How It Works
+        %a{ class: 'nav-link', href: '/menu-builder' } Menu Builder
       %li{ class: 'nav-item py-md-1 dropdown' }
         %a{ class: 'nav-link dropdown-toggle', href: '#', id: 'navbar-dropdown', role: 'button',
           'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' } Menu Types
@@ -20,9 +18,11 @@
           - MenuTypes.all.each do |menu_type|
             %a{ class: 'dropdown-item', href: "/type/#{menu_type}" }= menu_type.capitalize
       %li{ class: 'nav-item py-md-1' }
-        %a{ class: 'nav-link', href: '/about' } About
+        %a{ class: 'nav-link', href: '/how-it-works' } How It Works
+      %li{ class: 'nav-item py-md-1' }
+        %a{ class: 'nav-link', href: '/learn-more' } Learn More
     %form{ class: 'form-inline my-2 my-lg-0' }
       %button{ id: 'invert-colors', type: 'button', class: 'btn', onfocus: 'this.blur();',
-        onclick: 'toggleColorTheme(); this.blur();' }
+        onclick: 'toggleColorTheme(); this.blur(); createPieChart();' }
         %i{ id: 'color-theme', class: 'fas fa-moon fa-lg', alt: 'dark and light theme toggle icon' }
         %span{ id: 'switch-colors', class: 'navbar-toggler', 'aria-expanded': 'false' } Switch Colors

@@ -55,6 +55,7 @@ class FoodCategory
   def self.white_meats
     [
       'chicken',
+      'hen',
       'lamb',
       'poultry',
       'rabbit',

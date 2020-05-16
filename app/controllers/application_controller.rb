@@ -18,11 +18,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    redirect to('/menu_builder')
+    etag 'index'
+    haml :'../pages/home'
   end
 
-  get '/menu_builder' do
-    etag 'index'
+  get '/menu-builder' do
+    etag 'menu-builder'
     haml :'../pages/menu_builder'
   end
 
@@ -31,9 +32,9 @@ class ApplicationController < Sinatra::Base
     haml :'../pages/how_it_works'
   end
 
-  get '/about' do
-    etag 'about'
-    haml :'../pages/about'
+  get '/learn-more' do
+    etag 'learn-more'
+    haml :'../pages/learn-more'
   end
 
   get '/public/*' do |sub_path|
