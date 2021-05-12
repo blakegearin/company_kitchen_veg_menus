@@ -1,6 +1,6 @@
 # CK Veg Menus
 
-A web application to generate primarily plant-based menus for Cerner associates. Scrapes & filters [Company Kitchen](https://github.com/companykitchen)'s online menu.
+A web application to generate plant-based menus for Cerner associates. Scrapes & filters [Company Kitchen](https://github.com/companykitchen)'s online menu.
 
 ## Getting Started
 
@@ -34,7 +34,7 @@ Follow these steps to contribute:
 
 The menu information displayed on the website is retrieved from and wholly attributable to [Company Kitchen](https://companykitchen.com/). I do not provide any warranty, express or implied, about the completeness, reliability, or accuracy of the menu or items therein, especially regarding the ingredients & preparation of the food.
 
-Any action you take upon the information on this website is strictly at your own discretion and risk. I will not be liable for any losses and damages in the connection with the use of this website. When in doubt, ask the cooking staff at your location for more information about what it's their food and how it's prepared.
+Any action you take upon the information on this website is strictly at your own discretion and risk. I will not be liable for any losses and damages in the connection with the use of this website or application. When in doubt, ask the cooking staff at your location for more information about what is in their food and how it's prepared.
 
 ## License
 
