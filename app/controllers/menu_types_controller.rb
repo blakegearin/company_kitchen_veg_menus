@@ -31,7 +31,7 @@ class MenuTypesController < Sinatra::Base
 
     etag "/type/#{@menu_type}"
     if ['Custom', 'Full'].include?(@menu_type)
-      haml :"../pages/menu_types/#{@menu_type}"
+      haml :"../pages/menu_types/#{@menu_type.downcase}"
     else
       haml :'../pages/menu_types/filtered'
     end
