@@ -4,7 +4,7 @@
     %p This menu excludes these food categories:
     %div.accordion{ id: 'accordion' }
       %div{ class: 'card mb-0' }
-        - MenuTypes.send(@menu_type.downcase)['food_categories'].each_with_index do |food_category, index|
+        - MenuTypes.send(@menu_type.downcase)[:food_categories].each_with_index do |food_category, index|
           %div{ class: 'card-header collapsed', 'data-toggle': 'collapse', href: "#collapse#{index}" }
             %a{ class: 'card-title'}= food_category.gsub('_', ' ').titlecase
           %div{ id: "collapse#{index}", class: 'card-body collapse', 'data-parent': '#accordion'}
